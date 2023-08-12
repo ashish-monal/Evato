@@ -1,0 +1,197 @@
+[
+  {
+    "Docking_StationName": "Ashish Ranjan",
+    "Rating": 5,
+    "Address": "Bairiya Near By Durga Mandir Patna Bihar - 800007",
+    "Docking_ID": "1",
+    "Available_Vehicle": "10",
+    "Image": {
+      "uri": "https://ae01.alicdn.com/kf/HTB1q52_XjDuK1RjSszdq6xGLpXaR/FLJ-Big-wheel-Electric-Scooter-for-Adults-with-3200W-power-electrical-e-scooter-off-road-fat.jpg"
+    },
+    "Location": "Bihar",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Monal",
+    "Rating": 4,
+    "Address": "Agar Lucknow Uttar- Pradesh - 123456",
+    "Docking_ID": "2",
+    "Available_Vehicle": "15",
+    "Image": {
+      "uri": "https://ae01.alicdn.com/kf/HTB1T98CSFXXXXaIXVXXq6xXFXXXx/Adults-Electric-Tricycle-Citycoco-Electric-Scooter-Electric-bicycle-Handicapped-with-Basket-Three-Wheel-48V-500W.jpg"
+    },
+    "Location": "Lucknow",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Saurav Kumar Singh",
+    "Rating": 3,
+    "Address": "Agar Lucknow Uttar- Pradesh - 123456",
+    "Docking_ID": "3",
+    "Available_Vehicle": "7",
+    "Image": {
+      "uri": "https://www.carblogindia.com/wp-content/uploads/2017/05/2017-tvs-scooty-110-matte-blue.png"
+    },
+    "Location": "Chennai",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Ankit Kumar Singh",
+    "Rating": 5,
+    "Address": "Survey No. 103, A, 411 006, Nagar Road, Commerzone It Park, Yerwada, Pune, Maharashtra 411006",
+    "Docking_ID": "4",
+    "Available_Vehicle": "4",
+    "Image": {
+      "uri": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+    },
+    "Location": "Pune",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Ashish Ranjan",
+    "Rating": 5,
+    "Address": "Bairiya Near By Durga Mandir Patna Bihar - 800007",
+    "Docking_ID": "5",
+    "Available_Vehicle": "10",
+    "Image": {
+      "uri": "https://th.bing.com/th/id/OIP.ZoJWg7p85-cR3sB2JKshUQHaFi?pid=ImgDet&rs=1"
+    },
+    "Location": "Bihar",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Ashish Ranjan",
+    "Rating": 4,
+    "Address": "Bairiya Near By Durga Mandir Patna Bihar - 800007",
+    "Docking_ID": "6",
+    "Available_Vehicle": "10",
+    "Image": {
+      "uri": "https://c.ndtvimg.com/2019-09/0nm4q3eo_tvs-scooty-pep-plus-matte-edition_625x300_26_September_19.jpg"
+    },
+    "Location": "Bihar",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Ashish Ranjan",
+    "Rating": 2,
+    "Address": "Bairiya Near By Durga Mandir Patna Bihar - 800007",
+    "Docking_ID": "7",
+    "Available_Vehicle": "10",
+    "Image": {
+      "uri": "https://images.livemint.com/img/2019/09/26/original/TVS_Scooty_Pep_A_1569494711863.jpg"
+    },
+    "Location": "Bihar",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Ashish Ranjan",
+    "Rating": 2,
+    "Address": "Bairiya Near By Durga Mandir Patna Bihar - 800007",
+    "Docking_ID": "8",
+    "Available_Vehicle": "10",
+    "Image": {
+      "uri": "https://images.livemint.com/img/2019/09/26/original/TVS_Scooty_Pep_A_1569494711863.jpg"
+    },
+    "Location": "Bihar",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Ashish Ranjan",
+    "Rating": 5,
+    "Address": "Bairiya Near By Durga Mandir Patna Bihar - 800007",
+    "Docking_ID": "9",
+    "Available_Vehicle": "10",
+    "Image": {
+      "uri": "https://ae01.alicdn.com/kf/HTB1q52_XjDuK1RjSszdq6xGLpXaR/FLJ-Big-wheel-Electric-Scooter-for-Adults-with-3200W-power-electrical-e-scooter-off-road-fat.jpg"
+    },
+    "Location": "Bihar",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Monal",
+    "Rating": 4,
+    "Address": "Agar Lucknow Uttar- Pradesh - 123456",
+    "Docking_ID": "10",
+    "Available_Vehicle": "15",
+    "Image": {
+      "uri": "https://ae01.alicdn.com/kf/HTB1T98CSFXXXXaIXVXXq6xXFXXXx/Adults-Electric-Tricycle-Citycoco-Electric-Scooter-Electric-bicycle-Handicapped-with-Basket-Three-Wheel-48V-500W.jpg"
+    },
+    "Location": "Lucknow",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Saurav Kumar Singh",
+    "Rating": 3,
+    "Address": "IIT P. O., Opposite to C.L.R.I, The Adyar Cancer Institute, Chennai, Tamil Nadu 600036",
+    "Docking_ID": "11",
+    "Available_Vehicle": "7",
+    "Image": {
+      "uri": "https://www.carblogindia.com/wp-content/uploads/2017/05/2017-tvs-scooty-110-matte-blue.png"
+    },
+    "Location": "Chennai",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Ankit Kumar Singh",
+    "Rating": 5,
+    "Address": "Survey No. 103, A, 411 006, Nagar Road, Commerzone It Park, Yerwada, Pune, Maharashtra 411006",
+    "Docking_ID": "12",
+    "Available_Vehicle": "4",
+    "Image": {
+      "uri": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+    },
+    "Location": "Pune",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Ashish Ranjan",
+    "Rating": 4,
+    "Address": "Bairiya Near By Durga Mandir Patna Bihar - 800007",
+    "Docking_ID": "13",
+    "Available_Vehicle": "10",
+    "Image": {
+      "uri": "https://th.bing.com/th/id/OIP.ZoJWg7p85-cR3sB2JKshUQHaFi?pid=ImgDet&rs=1"
+    },
+    "Location": "Bihar",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Ashish Ranjan",
+    "Rating": 3,
+    "Address": "Bairiya Near By Durga Mandir Patna Bihar - 800007",
+    "Docking_ID": "14",
+    "Available_Vehicle": "10",
+    "Image": {
+      "uri": "https://c.ndtvimg.com/2019-09/0nm4q3eo_tvs-scooty-pep-plus-matte-edition_625x300_26_September_19.jpg"
+    },
+    "Location": "Bihar",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  },
+  {
+    "Docking_StationName": "Ashish Ranjan",
+    "Rating": 5,
+    "Address": "Bairiya Near By Durga Mandir Patna Bihar - 800007",
+    "Docking_ID": "15",
+    "Available_Vehicle": "10",
+    "Image": {
+      "uri": "https://images.livemint.com/img/2019/09/26/original/TVS_Scooty_Pep_A_1569494711863.jpg"
+    },
+    "Location": "Bihar",
+    "latitude": "22.55117833307583",
+    "longitude": "88.35377692887114"
+  }
+]
