@@ -7,13 +7,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import Header from '../../components/Header';
 import FooterSticky from '../../components/FooterSticky';
-
-const RefundAndCancellation = () => {
+import HeaderInside from '../../components/HeaderInside';
+const RefundAndCancellation = ({navigation}) => {
   return (
     <ScrollView style={{flex: 1}}>
-      <Header />
+      <HeaderInside navigation={navigation} />
       <View style={styles.View}>
         <Image
           source={require('../../assests/ovel-bg.png')}

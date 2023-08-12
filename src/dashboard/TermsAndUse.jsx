@@ -1,12 +1,12 @@
-import {StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import {StyleSheet, Image, Text, View, ScrollView} from 'react-native';
 import React from 'react';
-import Header from '../../components/Header';
 import FooterSticky from '../../components/FooterSticky';
-
-const TermsAndUse = () => {
+import HeaderInside from '../../components/HeaderInside';
+const TermsAndUse = ({navigation}) => {
   return (
     <ScrollView style={{flex: 1}}>
-      <Header />
+      {/* <Header /> */}
+      <HeaderInside navigation={navigation} />
       <View style={styles.View}>
         <Image
           source={require('../../assests/ovel-bg.png')}

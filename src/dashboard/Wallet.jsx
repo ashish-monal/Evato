@@ -8,17 +8,17 @@ import {
   TextInput,
 } from 'react-native';
 import React, {useState} from 'react';
-import Header from '../../components/Header';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Footer from '../../components/Footer';
-const Wallet = () => {
+import HeaderInside from '../../components/HeaderInside';
+const Wallet = ({navigation}) => {
   const [selectedAmount, setSelectedAmount] = useState(0);
   const [manualAmount, setManualAmount] = useState('0');
 
   return (
     <ScrollView style={{flex: 1}}>
-      <Header />
+      <HeaderInside navigation={navigation} />
       <View style={styles.View}>
         <View>
           <Text style={styles.text}>Wallet</Text>

@@ -6,8 +6,7 @@ const Header = () => {
     <View>
       <ImageBackground
         source={require('../assests/headerBackground.png')}
-        style={styles.image}
-        resizeMode="contain">
+        style={styles.image}>
         <Image
           source={require('../assests/headerName.png')}
           style={{alignSelf: 'center', marginVertical: 75}}

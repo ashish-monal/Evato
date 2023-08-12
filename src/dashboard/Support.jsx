@@ -1,13 +1,13 @@
 import {StyleSheet, Image, Text, View, ScrollView} from 'react-native';
 import React from 'react';
-import Header from '../../components/Header';
 import FooterSticky from '../../components/FooterSticky';
+import HeaderInside from '../../components/HeaderInside';
 
-const Support = () => {
+const Support = ({navigation}) => {
   return (
     <>
       <ScrollView style={{flex: 1}}>
-        <Header />
+        <HeaderInside navigation={navigation} />
         <View style={styles.View}>
           <Image
             source={require('../../assests/ovel-bg.png')}

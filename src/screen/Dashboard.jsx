@@ -1,6 +1,4 @@
 import {
-  Image,
-  ImageBackground,
   StyleSheet,
   Text,
   TextInput,
@@ -14,50 +12,15 @@ import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import DockingStationList from '../../components/DockingStationList';
 import DockingData from '../../assests/data/docking.json';
+import HeaderInside from '../../components/HeaderInside';
 
 const Dashboard = ({navigation}) => {
   const [search, setSearch] = useState('');
   const [dockings, setDockings] = useState(DockingData);
 
-  const Drawer = () => {
-    navigation.openDrawer();
-  };
-
   return (
     <View style={{flex: 1}}>
-      <ImageBackground
-        source={require('../../assests/headerBackground.png')}
-        style={styles.image}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            marginVertical: 100,
-          }}>
-          <TouchableOpacity
-            onPress={Drawer}
-            // onPress={() => navigation.navigate('DrawerNavigation')}
-            style={{zIndex: 10, marginTop: 10}}>
-            <FontAwesome
-              name="bars"
-              size={30}
-              color="white"
-              style={{
-                marginLeft: 10,
-              }}
-            />
-          </TouchableOpacity>
-          <Image
-            source={require('../../assests/headerName.png')}
-            resizeMode="contain"
-            style={{
-              height: 50,
-              flex: 2,
-              marginLeft: -50,
-            }}
-          />
-        </View>
-      </ImageBackground>
+      <HeaderInside navigation={navigation} />
       <View style={styles.inputView}>
         <FontAwesome name="search" size={24} color="gray" />
         <TextInput

@@ -8,9 +8,9 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import {MyBookingData} from '../../assests/data/MyBookingData';
-import Header from '../../components/Header';
+import HeaderInside from '../../components/HeaderInside';
 
-const MyBooking = () => {
+const MyBooking = ({navigation}) => {
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -41,8 +41,8 @@ const MyBooking = () => {
 
   return (
     <View style={{flex: 1}}>
-      <Header />
-      <Text style={styles.title}>Service Rating</Text>
+      <HeaderInside navigation={navigation} />
+      <Text style={styles.title}>Booking History</Text>
       <View style={styles.tableContainer}>
         <ScrollView horizontal>
           <View>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 175,
+    marginTop: 100,
     marginStart: 155,
     position: 'absolute',
   },

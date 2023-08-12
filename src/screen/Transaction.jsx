@@ -1,9 +1,8 @@
 import {StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
-import Header from '../../components/Header';
 import {transaction} from '../../assests/data/Transaction';
-
-const Transaction = () => {
+import HeaderInside from '../../components/HeaderInside';
+const Transaction = ({navigation}) => {
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -31,7 +30,7 @@ const Transaction = () => {
 
   return (
     <View>
-      <Header />
+      <HeaderInside navigation={navigation} />
       <Text style={styles.title}>Transaction History</Text>
       <View style={styles.table}>
         <View style={styles.tableHeader}>
@@ -75,7 +74,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 175,
+    marginTop: 100,
     marginStart: 135,
     position: 'absolute',
   },

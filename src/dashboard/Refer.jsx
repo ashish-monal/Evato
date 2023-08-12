@@ -7,13 +7,14 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import Header from '../../components/Header';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FooterSticky from '../../components/FooterSticky';
-const Refer = () => {
+import HeaderInside from '../../components/HeaderInside';
+const Refer = ({navigation}) => {
   return (
     <ScrollView style={{flex: 1}}>
-      <Header />
+      <HeaderInside navigation={navigation} />
+
       <View style={styles.View}>
         <View>
           <Text style={styles.referText}>Refer a Friend</Text>

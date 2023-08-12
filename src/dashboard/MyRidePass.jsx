@@ -1,12 +1,12 @@
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import HeaderInside from '../../components/HeaderInside';
 
-const MyRidePass = () => {
+const MyRidePass = ({navigation}) => {
   return (
     <ScrollView style={{flex: 1}}>
-      <Header />
+      <HeaderInside navigation={navigation} />
       <Text style={styles.title}>My Ride Pass</Text>
       <View style={styles.view2}>
         <Text style={styles.text2}>Your Current</Text>
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 175,
+    marginTop: 100,
     marginStart: 155,
     position: 'absolute',
   },

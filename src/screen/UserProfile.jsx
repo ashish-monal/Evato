@@ -8,10 +8,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
-import Header from '../../components/Header';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Footer from '../../components/Footer';
+import HeaderInside from '../../components/HeaderInside';
 const UserProfile = ({navigation}) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -26,7 +26,7 @@ const UserProfile = ({navigation}) => {
 
   return (
     <ScrollView style={{flex: 1}}>
-      <Header />
+      <HeaderInside navigation={navigation} />
       <View style={styles.View}>
         <Image
           source={require('../../assests/ovel-bg.png')}

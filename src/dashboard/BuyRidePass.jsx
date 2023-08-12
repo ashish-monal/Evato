@@ -4,54 +4,16 @@ import {
   View,
   TouchableOpacity,
   ScrollView,
-  ImageBackground,
-  Image,
 } from 'react-native';
 import React from 'react';
 import Pass from '../../components/Pass';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import FooterSticky from '../../components/FooterSticky';
+import HeaderInside from '../../components/HeaderInside';
 
 const BuyRidePass = ({navigation}) => {
-  const Drawer = () => {
-    navigation.openDrawer();
-  };
   return (
     <ScrollView style={{flex: 1}}>
-      <ImageBackground
-        source={require('../../assests/headerBackground.png')}
-        style={styles.image}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            marginVertical: 100,
-          }}>
-          <TouchableOpacity
-            onPress={Drawer}
-            style={{zIndex: 10, marginTop: 10}}>
-            <FontAwesome
-              name="bars"
-              size={30}
-              color="white"
-              style={{
-                marginTop: -75,
-                marginLeft: 10,
-              }}
-            />
-          </TouchableOpacity>
-          <Image
-            source={require('../../assests/headerName.png')}
-            resizeMode="contain"
-            style={{
-              marginTop: -75,
-              height: 50,
-              flex: 2,
-              marginLeft: -50,
-            }}
-          />
-        </View>
-      </ImageBackground>
+      <HeaderInside navigation={navigation} />
 
       <View style={styles.View}>
         <View>
@@ -111,7 +73,6 @@ const styles = StyleSheet.create({
     marginBottom: 160,
   },
   referText: {
-    // marginTop: -75,
     fontSize: 20,
     fontWeight: '700',
     textAlign: 'center',
