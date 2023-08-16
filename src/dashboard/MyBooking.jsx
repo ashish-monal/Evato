@@ -11,6 +11,13 @@ import {MyBookingData} from '../../assests/data/MyBookingData';
 import HeaderInside from '../../components/HeaderInside';
 
 const MyBooking = ({navigation}) => {
+  const [entitiesPerPage, setEntitiesPerPage] = useState(5);
+
+  const handleEntitiesPerPageChange = value => {
+    setEntitiesPerPage(value);
+    setCurrentPage(1);
+  };
+
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -26,17 +33,36 @@ const MyBooking = ({navigation}) => {
   const renderItem = ({item}) => (
     <View style={styles.tableRow}>
       {Object.keys(item).map(key => (
-        <Text key={key} style={styles.cell}>
-          {item[key]}
-        </Text>
+        <TouchableOpacity
+          key={key}
+          onPress={() => {
+            if (key === 'ConditionCheck') {
+              navigation.navigate('ConditonCheck');
+            } else if (key === 'Rating') {
+              navigation.navigate('Rating');
+            }
+          }}>
+          <Text
+            style={
+              key === 'ConditionCheck' || key === 'Rating'
+                ? {
+                    color: 'blue',
+                    marginLeft: 25,
+                    textDecorationLine: 'underline',
+                  }
+                : styles.cell
+            }>
+            {item[key]}
+          </Text>
+        </TouchableOpacity>
       ))}
     </View>
   );
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
+  const startIndex = (currentPage - 1) * entitiesPerPage;
   const visibleData = MyBookingData.slice(
     startIndex,
-    startIndex + itemsPerPage,
+    startIndex + entitiesPerPage,
   );
 
   return (
@@ -61,6 +87,45 @@ const MyBooking = ({navigation}) => {
           </View>
         </ScrollView>
       </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignContent: 'center',
+          alignItems: 'center',
+          alignSelf: 'center',
+        }}>
+        <Text style={{color: 'gray', fontSize: 18, marginTop: 10}}>
+          Show Entities
+        </Text>
+        <View style={styles.entitiesPerPageButtons}>
+          <TouchableOpacity
+            style={[
+              styles.entitiesPerPageButton,
+              (entitiesPerPage == 10) & styles.selectedEntitiesButton,
+            ]}
+            onPress={() => handleEntitiesPerPageChange(10)}>
+            <Text style={styles.entitiesPerPageButtonText}>10</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.entitiesPerPageButton,
+              entitiesPerPage === 25 && styles.selectedEntitiesButton,
+            ]}
+            onPress={() => handleEntitiesPerPageChange(25)}>
+            <Text style={styles.entitiesPerPageButtonText}>25</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.entitiesPerPageButton,
+              entitiesPerPage === 100 && styles.selectedEntitiesButton,
+            ]}
+            onPress={() => handleEntitiesPerPageChange(100)}>
+            <Text style={styles.entitiesPerPageButtonText}>100</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
       <View style={styles.pagination}>
         <TouchableOpacity
           style={styles.paginationButton}
@@ -77,7 +142,9 @@ const MyBooking = ({navigation}) => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.touchableOpacitySignIn}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Dashboard')}
+        style={styles.touchableOpacitySignIn}>
         <Text style={styles.SignIn}>Back</Text>
       </TouchableOpacity>
     </View>
@@ -115,13 +182,14 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     backgroundColor: 'green',
     paddingVertical: 5,
+    justifyContent: 'center',
   },
   headerCell: {
     flex: 1,
     padding: 10,
+    width: 125,
     fontWeight: 'bold',
-    // textAlign: 'center',
-    width: 150,
+    textAlign: 'center',
   },
   tableRow: {
     flexDirection: 'row',
@@ -130,9 +198,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   cell: {
+    marginLeft: 25,
     flex: 1,
     padding: 10,
-    // textAlign: 'center',
+    width: 100,
+    textAlign: 'center',
   },
   pagination: {
     flexDirection: 'row',
@@ -167,6 +237,34 @@ const styles = StyleSheet.create({
   SignIn: {
     color: 'white',
     fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  linkCell: {
+    flex: 1,
+    width: 150,
+    padding: 10,
+    // marginLeft: 35,
+    color: 'blue', // Or any color you prefer for links
+    textDecorationLine: 'underline',
+  },
+  entitiesPerPageButtons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  entitiesPerPageButton: {
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 5,
+    marginHorizontal: 5,
+    backgroundColor: '#f2f2f2',
+  },
+  selectedEntitiesButton: {
+    backgroundColor: 'green',
+  },
+  entitiesPerPageButtonText: {
     fontWeight: 'bold',
     textAlign: 'center',
   },

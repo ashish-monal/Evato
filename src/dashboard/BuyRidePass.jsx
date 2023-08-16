@@ -9,7 +9,7 @@ import React from 'react';
 import Pass from '../../components/Pass';
 import FooterSticky from '../../components/FooterSticky';
 import HeaderInside from '../../components/HeaderInside';
-
+import Entypo from 'react-native-vector-icons/Entypo';
 const BuyRidePass = ({navigation}) => {
   return (
     <ScrollView style={{flex: 1}}>
@@ -31,25 +31,62 @@ const BuyRidePass = ({navigation}) => {
         <View style={styles.view4}>
           <Pass
             title="Hour Pass"
-            money="50"
+            money="50.00"
             description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration."
             color="#E69898"
             colorSecond="#9B4C4C"
           />
           <Pass
             title="Half Day Pass"
-            money="290"
+            money="290.00"
             description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration."
             color="#D7D777"
             colorSecond="#99994D"
           />
           <Pass
             title="Full Day Pass"
-            money="390"
+            money="390.00"
             description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration."
             color="#80ADD7"
             colorSecond="#2F5171"
           />
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginHorizontal: 25,
+          }}>
+          <Text style={{color: 'green', fontSize: 18}}>
+            Total Number of Pass
+          </Text>
+          <View
+            style={{
+              backgroundColor: 'white',
+              borderRadius: 15,
+              flexDirection: 'row',
+              paddingHorizontal: 10,
+              alignItems: 'center',
+              height: 35,
+            }}>
+            <TouchableOpacity>
+              <Entypo
+                name="minus"
+                size={18}
+                color="black"
+                style={{marginHorizontal: 5}}
+              />
+            </TouchableOpacity>
+            <Text style={{fontSize: 18, marginHorizontal: 5}}>1</Text>
+            <TouchableOpacity>
+              <Entypo
+                name="plus"
+                size={18}
+                color="black"
+                style={{marginHorizontal: 5}}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
         <View>
           <TouchableOpacity style={styles.touchableButton}>

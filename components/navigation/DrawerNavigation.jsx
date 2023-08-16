@@ -1,5 +1,11 @@
 import React from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import {View, Image, Text, Alert} from 'react-native';
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from '@react-navigation/drawer';
 import UserProfile from '../../src/screen/UserProfile';
 import Dashboard from '../../src/screen/Dashboard';
 import Wallet from '../../src/dashboard/Wallet';
@@ -12,14 +18,44 @@ import Support from '../../src/dashboard/Support';
 import TermsAndUse from '../../src/dashboard/TermsAndUse';
 import PrivacyPolicy from '../../src/dashboard/PrivacyPolicy';
 import RefundAndCancellation from '../../src/dashboard/RefundAndCancellation';
+import StartAndEndRide from '../../src/dashboard/StartAndEndRide';
+import ServiceRating from '../../src/screen/ServiceRating';
 
 const Drawer = createDrawerNavigator();
 
+const CustomDrawerContent = props => {
+  return (
+    <DrawerContentScrollView {...props}>
+      <View
+        style={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingVertical: 20,
+        }}>
+        <Image
+          source={require('../../assests/user-image.png')}
+          style={{width: 80, height: 80, borderRadius: 40}}
+        />
+        <Text style={{marginTop: 10, fontSize: 18}}>User Name</Text>
+        <Text>Email@gmail.com</Text>
+      </View>
+      <DrawerItemList {...props} />
+      <DrawerItem
+        label="Log Out"
+        onPress={() => Alert.alert('Log Out Successfully')}
+      />
+    </DrawerContentScrollView>
+  );
+};
+
 const DrawerNavigation = () => {
   return (
-    <Drawer.Navigator initialRouteName="Dashboard">
+    <Drawer.Navigator
+      initialRouteName="Dashboard"
+      backBehavior="initialRoute"
+      drawerContent={CustomDrawerContent}>
       <Drawer.Screen
-        name="MyProfile"
+        name="User Profile"
         component={UserProfile}
         options={{headerShown: false}}
       />
@@ -46,6 +82,11 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         name="My Booking"
         component={MyBooking}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name="Start/End Ride"
+        component={StartAndEndRide}
         options={{headerShown: false}}
       />
       <Drawer.Screen
@@ -76,6 +117,11 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         name="Refund and Cancellation Policy"
         component={RefundAndCancellation}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name="Rating"
+        component={ServiceRating}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>

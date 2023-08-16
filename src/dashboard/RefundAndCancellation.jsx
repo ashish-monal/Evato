@@ -140,7 +140,9 @@ const RefundAndCancellation = ({navigation}) => {
               Thank you for your understanding and cooperation.
             </Text>
             {/* Back Button */}
-            <TouchableOpacity style={styles.touchableOpacityBack}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Dashboard')}
+              style={styles.touchableOpacityBack}>
               <Text style={styles.back}>Back</Text>
             </TouchableOpacity>
           </View>

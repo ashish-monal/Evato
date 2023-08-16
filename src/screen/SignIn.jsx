@@ -10,6 +10,7 @@ import {
 import React, {useState} from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
@@ -19,7 +20,7 @@ const SignIn = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <ScrollView style={{flex: 1}}>
+    <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
       <Header />
       <View style={styles.View}>
         <Image
@@ -30,11 +31,11 @@ const SignIn = ({navigation}) => {
           <Text style={styles.text}>Sign In</Text>
           <View style={styles.textInputView}>
             <View style={styles.inputView}>
-              <AntDesign
+              <Feather
                 style={{marginTop: 10}}
                 name="phone"
                 size={24}
-                color="black"
+                color="gray"
               />
               <TextInput
                 style={styles.input}
@@ -50,7 +51,7 @@ const SignIn = ({navigation}) => {
                 style={{marginTop: 10}}
                 name="lock-outline"
                 size={24}
-                color="black"
+                color="gray"
               />
               <TextInput
                 style={styles.input}
@@ -64,7 +65,7 @@ const SignIn = ({navigation}) => {
                 style={{marginTop: 10}}
                 name={showPassword == false ? 'eye-closed' : 'eye'}
                 size={24}
-                color="black"
+                color="gray"
                 onPress={() => {
                   setShowPassword(!showPassword);
                 }}
@@ -98,7 +99,17 @@ const SignIn = ({navigation}) => {
           </View>
         </View>
       </View>
-      <Footer />
+      <View
+        style={{
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+          height: 'auto',
+          alignContent: 'flex-end',
+          // alignItems: 'flex-end',
+          // alignSelf: 'flex-end',
+        }}>
+        <Footer />
+      </View>
     </ScrollView>
   );
 };
@@ -111,6 +122,10 @@ const styles = StyleSheet.create({
     height: 'auto',
     marginTop: -75,
     marginHorizontal: 25,
+    overflow: 'hidden',
+    borderBottomEndRadius: 25,
+    borderBottomStartRadius: 25,
+    marginVertical: 20,
   },
   bgImage: {
     width: '100%',

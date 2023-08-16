@@ -13,6 +13,8 @@ import FPassword from '../../src/screen/FPassword';
 import PasswordOTP from '../../src/screen/PasswordOTP';
 import UpdatePassword from '../../src/screen/UpdatePassword';
 import DrawerNavigation from './DrawerNavigation';
+import ServiceRating from '../../src/screen/ServiceRating';
+import VehicleConditionCheck from '../../src/screen/VehicleConditionCheck';
 
 const Stack = createNativeStackNavigator();
 
@@ -78,6 +80,16 @@ const AuthNavigation = () => {
       <Stack.Screen
         name="DrawerNavigation"
         component={DrawerNavigation}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Rating"
+        component={ServiceRating}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ConditonCheck"
+        component={VehicleConditionCheck}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

@@ -11,12 +11,13 @@ import React, {useState} from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Star from '../../components/Star';
-const ServiceRating = () => {
+import HeaderInside from '../../components/HeaderInside';
+const ServiceRating = ({navigation}) => {
   const [mangerRating, setManagerRating] = useState(0);
 
   return (
     <ScrollView style={{flex: 1}}>
-      <Header />
+      <HeaderInside navigation={navigation} />
       <Text style={styles.title}>Service Rating</Text>
 
       <View
@@ -93,7 +94,9 @@ const ServiceRating = () => {
           multiline
           numberOfLines={3}
         />
-        <TouchableOpacity style={styles.touchableOpacitysubmit}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Dashboard')}
+          style={styles.touchableOpacitysubmit}>
           <Text style={styles.submit}>Submit</Text>
         </TouchableOpacity>
       </View>
@@ -108,7 +111,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 175,
+    marginTop: 100,
     marginStart: 155,
     position: 'absolute',
   },

@@ -1,8 +1,11 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Entypo from 'react-native-vector-icons/Entypo';
+import Feather from 'react-native-vector-icons/Feather';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 const Pass = props => {
   const [hourPass, setHourPass] = useState(0);
+  const [selected, setSelected] = useState(false);
   return (
     <View
       style={[
@@ -50,7 +53,26 @@ const Pass = props => {
               marginHorizontal: 25,
               marginVertical: 15,
             }}>
-            <View></View>
+            <TouchableOpacity
+              onPress={() => {
+                setSelected(!selected);
+              }}
+              style={{flexDirection: 'row'}}>
+              <Feather
+                name={selected ? 'check-square' : 'square'}
+                size={24}
+                color="red"
+              />
+              <Text
+                style={{
+                  marginLeft: 10,
+                  color: 'red',
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                Select
+              </Text>
+            </TouchableOpacity>
             <View
               style={{
                 flexDirection: 'row',
@@ -100,6 +122,7 @@ const styles = StyleSheet.create({
     width: '90%',
     marginVertical: 15,
     borderWidth: 2,
+    borderRadius: 10,
   },
   view2: {
     flex: 1,

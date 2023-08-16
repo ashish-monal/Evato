@@ -10,6 +10,7 @@ import {
 import React, {useState} from 'react';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Footer from '../../components/Footer';
 import HeaderInside from '../../components/HeaderInside';
 const UserProfile = ({navigation}) => {
@@ -44,7 +45,7 @@ const UserProfile = ({navigation}) => {
 
           {/* User Name */}
           <View style={styles.inputView}>
-            <Entypo name="user" size={24} color="black" />
+            <Entypo name="user" size={24} color="gray" />
             <TextInput
               style={styles.input}
               placeholder="Name as National ID"
@@ -56,7 +57,7 @@ const UserProfile = ({navigation}) => {
           </View>
           {/* Mobile Number */}
           <View style={styles.inputView}>
-            <Entypo name="phone" size={24} color="black" />
+            <FontAwesome name="phone" size={24} color="gray" />
             <TextInput
               style={styles.input}
               placeholder="Mobile Number"
@@ -69,7 +70,7 @@ const UserProfile = ({navigation}) => {
 
           {/* User Email */}
           <View style={styles.inputView}>
-            <Entypo name="mail" size={24} color="black" />
+            <Entypo name="mail" size={24} color="gray" />
             <TextInput
               style={styles.input}
               placeholder="Email ID"
@@ -82,7 +83,7 @@ const UserProfile = ({navigation}) => {
 
           {/* User Address */}
           <View style={styles.inputView}>
-            <Entypo name="home" size={24} color="black" />
+            <Entypo name="home" size={24} color="gray" />
             <TextInput
               style={styles.input}
               placeholder="Address"
@@ -95,7 +96,7 @@ const UserProfile = ({navigation}) => {
 
           {/* User State */}
           <View style={styles.inputView}>
-            <Entypo name="location" size={24} color="black" />
+            <Entypo name="location" size={24} color="gray" />
             <TextInput
               style={styles.input}
               placeholder="Select State"
@@ -108,7 +109,7 @@ const UserProfile = ({navigation}) => {
 
           {/* User City */}
           <View style={styles.inputView}>
-            <MaterialCommunityIcons name="city" size={24} color="black" />
+            <MaterialCommunityIcons name="city" size={24} color="gray" />
             <TextInput
               style={styles.input}
               placeholder="City"
@@ -121,7 +122,7 @@ const UserProfile = ({navigation}) => {
 
           {/* User Pincode */}
           <View style={styles.inputView}>
-            <Entypo name="location-pin" size={24} color="black" />
+            <Entypo name="location-pin" size={24} color="gray" />
             <TextInput
               style={styles.input}
               placeholder="PIN Code"
@@ -134,7 +135,7 @@ const UserProfile = ({navigation}) => {
 
           {/* User Password */}
           <View style={styles.inputView}>
-            <Entypo name="lock" size={24} color="black" />
+            <Entypo name="lock" size={24} color="gray" />
             <TextInput
               style={styles.input}
               placeholder="Password"
@@ -148,7 +149,7 @@ const UserProfile = ({navigation}) => {
 
           {/* User Confirm Password */}
           <View style={styles.inputView}>
-            <Entypo name="lock" size={24} color="black" />
+            <Entypo name="lock" size={24} color="gray" />
             <TextInput
               style={styles.input}
               placeholder="Confirm Password"

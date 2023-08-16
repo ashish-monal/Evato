@@ -265,7 +265,9 @@ const PrivacyPolicy = ({navigation}) => {
 
             {/* Back Button */}
 
-            <TouchableOpacity style={styles.touchableOpacityBack}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Dashboard')}
+              style={styles.touchableOpacityBack}>
               <Text style={styles.back}>Back</Text>
             </TouchableOpacity>
           </View>

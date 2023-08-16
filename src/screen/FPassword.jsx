@@ -7,11 +7,13 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../../components/Header';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import Feather from 'react-native-vector-icons/Feather';
 import Footer from '../../components/Footer';
 const FPassword = ({navigation}) => {
+  const [mobileNumber, setMobileNumber] = useState(null);
+  // console.log(mobileNumber);
   return (
     <ScrollView>
       <Header />
@@ -27,18 +29,20 @@ const FPassword = ({navigation}) => {
             resizeMode="cover"
           />
           <View style={styles.inputView}>
-            <AntDesign
-              style={{marginTop: 10}}
+            <Feather
+              style={{marginTop: 15}}
               name="phone"
               size={24}
-              color="black"
+              color="gray"
             />
             <TextInput
               style={styles.input}
               placeholder="Registered Mobile Number"
               keyboardType="number-pad"
-              // value={mobile}
-              // onChangeText={text => setMobile(text)}
+              maxLength={10}
+              returnKeyType="done"
+              value={mobileNumber}
+              onChangeText={text => setMobileNumber(text)}
             />
           </View>
 

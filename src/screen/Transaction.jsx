@@ -4,6 +4,12 @@ import {transaction} from '../../assests/data/Transaction';
 import HeaderInside from '../../components/HeaderInside';
 const Transaction = ({navigation}) => {
   const itemsPerPage = 5;
+  const [entitiesPerPage, setEntitiesPerPage] = useState(5);
+
+  const handleEntitiesPerPageChange = value => {
+    setEntitiesPerPage(value);
+    setCurrentPage(1);
+  };
   const [currentPage, setCurrentPage] = useState(1);
 
   const handlePreviousPage = () => {
@@ -25,8 +31,11 @@ const Transaction = ({navigation}) => {
     </View>
   );
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const visibleData = transaction.slice(startIndex, startIndex + itemsPerPage);
+  const startIndex = (currentPage - 1) * entitiesPerPage;
+  const visibleData = transaction.slice(
+    startIndex,
+    startIndex + entitiesPerPage,
+  );
 
   return (
     <View>
@@ -46,6 +55,45 @@ const Transaction = ({navigation}) => {
           keyExtractor={item => item.ID}
         />
       </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignContent: 'center',
+          alignItems: 'center',
+          alignSelf: 'center',
+        }}>
+        <Text style={{color: 'gray', fontSize: 18, marginTop: 10}}>
+          Show Entities
+        </Text>
+        <View style={styles.entitiesPerPageButtons}>
+          <TouchableOpacity
+            style={[
+              styles.entitiesPerPageButton,
+              (entitiesPerPage == 10) & styles.selectedEntitiesButton,
+            ]}
+            onPress={() => handleEntitiesPerPageChange(10)}>
+            <Text style={styles.entitiesPerPageButtonText}>10</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.entitiesPerPageButton,
+              entitiesPerPage === 25 && styles.selectedEntitiesButton,
+            ]}
+            onPress={() => handleEntitiesPerPageChange(25)}>
+            <Text style={styles.entitiesPerPageButtonText}>25</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.entitiesPerPageButton,
+              entitiesPerPage === 100 && styles.selectedEntitiesButton,
+            ]}
+            onPress={() => handleEntitiesPerPageChange(100)}>
+            <Text style={styles.entitiesPerPageButtonText}>100</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
       <View style={styles.pagination}>
         <TouchableOpacity
           style={styles.paginationButton}
@@ -62,7 +110,9 @@ const Transaction = ({navigation}) => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.touchableOpacitySignIn}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Dashboard')}
+        style={styles.touchableOpacitySignIn}>
         <Text style={styles.SignIn}>Back</Text>
       </TouchableOpacity>
     </View>
@@ -142,6 +192,26 @@ const styles = StyleSheet.create({
   SignIn: {
     color: 'white',
     fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  entitiesPerPageButtons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  entitiesPerPageButton: {
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 5,
+    marginHorizontal: 5,
+    backgroundColor: '#f2f2f2',
+  },
+  selectedEntitiesButton: {
+    backgroundColor: 'green',
+  },
+  entitiesPerPageButtonText: {
     fontWeight: 'bold',
     textAlign: 'center',
   },

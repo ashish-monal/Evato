@@ -62,6 +62,7 @@ const OTP = () => {
             style={styles.otpInput}
             keyboardType="number-pad"
             maxLength={1}
+            placeholder="*"
             onChangeText={text => handleOTPChange(index, text)}
             value={digit}
             ref={ref => (otpInputRefs.current[index] = ref)}

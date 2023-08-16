@@ -7,7 +7,7 @@ import FooterSticky from '../../components/FooterSticky';
 
 const Welcome = ({navigation}) => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header />
       <View
         style={{marginTop: -100, flexDirection: 'column', alignSelf: 'center'}}>

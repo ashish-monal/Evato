@@ -6,7 +6,7 @@ const FooterSticky = () => {
     <View style={styles.footerContainer}>
       <Image
         source={require('../assests/footer.png')}
-        style={styles.footerImage}
+        style={{backgroundColor: 'white'}}
       />
     </View>
   );
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     right: 0,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#f2f2f2',
+    backgroundColor: 'white',
     height: 'auto',
   },
 });

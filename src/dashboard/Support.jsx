@@ -15,6 +15,13 @@ const Support = ({navigation}) => {
           />
           <View style={styles.container}>
             <Text style={styles.text}>Support</Text>
+            <View>
+              <Image
+                source={require('../../assests/support.png')}
+                style={styles.support}
+                resizeMode="contain"
+              />
+            </View>
             <View style={styles.detailsContainer}>
               <Text style={styles.detailsText}>
                 Support Number - 6291276506
@@ -66,5 +73,11 @@ const styles = StyleSheet.create({
   detailsText: {
     fontSize: 18,
     color: 'gray',
+  },
+  support: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    width: '100%',
+    height: 300,
   },
 });

@@ -6,14 +6,34 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
+  Linking,
 } from 'react-native';
 import React from 'react';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 const DockingStationList = ({navigation, dockings}) => {
-  const navigateToMapView = location => {
-    navigation.navigate('MapView', {location});
+  const OpenMap = (latitude, longitude) => {
+    const url = `https://www.google.com/maps/place/${latitude},${longitude}`;
+
+    Linking.openURL(url).catch(error => {
+      console.log('Error Opening URL:', error);
+    });
+  };
+
+  const OpenWhatsApp = whatsappNumber => {
+    const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}`;
+
+    Linking.openURL(url).catch(error => {
+      console.log('Error While Opening Whatsapp', error);
+    });
+  };
+
+  const OpenDialer = phoneNumber => {
+    Linking.openURL(`tel:${phoneNumber}`).catch(error => {
+      console.log('Error While Opening Dialer', error);
+    });
   };
   const renderList = ({item}) => {
     return (
@@ -36,7 +56,7 @@ const DockingStationList = ({navigation, dockings}) => {
             {/* <Text> Rating:{item.Rating}</Text> */}
             <View style={{flexDirection: 'row'}}>
               {Array.from({length: item.Rating}).map((_, index) => (
-                <AntDesign key={index} name="star" size={24} color="brown" />
+                <AntDesign key={index} name="star" size={24} color="red" />
               ))}
             </View>
 
@@ -50,19 +70,24 @@ const DockingStationList = ({navigation, dockings}) => {
               <Text style={styles.vehical}>Available Vehicle</Text>
               <Text style={styles.vehicalText}>{item.Available_Vehicle}</Text>
             </View>
-            {/* Location */}
-            <TouchableOpacity
-              style={{flexDirection: 'row', marginBottom: 10}}
-              // onPress={() =>
-              //   navigateToMapView({
-              //     latitude: item.Latitude,
-              //     longitude: item.Longitude,
-              //   })
-              // }
-            >
-              <Entypo name="map" color="green" size={24} />
-              <Text style={styles.location}>Location</Text>
-            </TouchableOpacity>
+            {/* Location WhatsApp Call */}
+            <View style={{flexDirection: 'row', gap: 10, marginTop: 10}}>
+              <TouchableOpacity
+                style={{flexDirection: 'row', marginBottom: 10}}
+                onPress={() => OpenMap(item.latitude, item.longitude)}>
+                <Entypo name="map" color="green" size={24} />
+                <Text style={styles.location}>Location</Text>
+              </TouchableOpacity>
+              {/* Whatsapp */}
+              <TouchableOpacity
+                onPress={() => OpenWhatsApp(item.WhatsAppNumber)}>
+                <FontAwesome name="whatsapp" size={24} color="red" />
+              </TouchableOpacity>
+              {/* Call */}
+              <TouchableOpacity onPress={() => OpenDialer(item.PhoneNumber)}>
+                <Ionicons name="call-sharp" size={24} color="red" />
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </SafeAreaView>
